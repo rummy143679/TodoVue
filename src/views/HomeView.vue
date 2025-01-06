@@ -3,20 +3,14 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <h1>This is an home page</h1>
-    <p>{{ name }}</p>
     <p>{{Data}}</p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'HomeView',
-  // components: {
-  //   HelloWorld
-  // },
   created() {
     this.fetchData();
   },
@@ -28,9 +22,8 @@ export default {
   },
   methods: {
     async fetchData(){
-      console.log("ygiugy")
       try {
-        const response = await fetch(`/api/Todo`); // Replace with your API endpoint
+        const response = await fetch(`/api/Users`);
         console.log(response)
 
         if (!response.ok) {
