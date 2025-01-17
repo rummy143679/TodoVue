@@ -9,8 +9,8 @@
         <br><br/>
         <input type="text" placeholder="Confirm password" v-model="register.UserConfirmPassword" />
         <br><br/>
-        <!-- <input type="radio" v-model="register.gender" /> -->
         <button class="btn btn-success" @click="registerSubmit">Register</button>
+        <p>If you have account ?<strong @click="loginClick"><a>login here!</a></strong></p>
     </div>
 </template>
 <script>
@@ -30,7 +30,6 @@ export default {
     },
     methods: {
         registerSubmit(){
-            // console.log(this.$data.register);
             if( this.register.UserConfirmPassword != '' && this.register.UserPassword != '' && this.register.UserEmail != '' && this.register.UserName != ''){
                 if(this.register.UserConfirmPassword === this.register.UserPassword){
                     axios.post('/api/Users',this.register).then(res => {
@@ -44,7 +43,7 @@ export default {
                             }
                             )
                             alert("Register Successfull");
-                            this.$router.push("/")
+                            this.$router.push("/login")
                         }else{
                             alert("Registation not completed")
                         }
@@ -56,6 +55,9 @@ export default {
             }else{
                 alert("Some fields are missing");
             }
+        },
+        loginClick(){
+            this.$router.push("/login")
         }
     }
 }
