@@ -1,16 +1,21 @@
 <template>
-  <router-view/>
-    <div class="login">
-      <div>
-        <h6>Enter Login Detaild</h6>
-        <input type="text" v-model="loginInfo.UserEmail" value="email" placeholder="Email" />
-        <br><br/>
-        <input type="text" v-model="loginInfo.UserPassword" value="password" placeholder="Password" />
-        <br><br/>
-        <button class="btn btn-success" @click="onLogin" >Login</button>
-        <p>Dont have account ?<strong @click="registerClick"><a>Register here!</a></strong></p>
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Enter Login Details</h5>
+            <form class="form-group">
+              <input class="form-control my-2" type="text" v-model="loginInfo.UserEmail" placeholder="Email" />
+              <input class="form-control my-2" type="text" v-model="loginInfo.UserPassword" placeholder="Password" />
+              <button class="btn btn-success" @click="onLogin">Login</button>
+              <p class="text-center">Don't have an account? <strong @click="registerClick"><router-link to="/register">Register here </router-link></strong></p>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
 import axios from 'axios';
@@ -47,3 +52,9 @@ export default {
     }
 }
 </script>
+<style scoped>
+  .submit-button{
+    width:5rem;
+    margin-left: 80px;
+  }
+</style>

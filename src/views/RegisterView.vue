@@ -1,17 +1,23 @@
 <template>
-    <div class="register">
-        <h5>Register Here</h5>
-        <input type="text" placeholder="Name" v-model="register.UserName" />
-        <br><br/>
-        <input type="text" placeholder="Email" v-model="register.UserEmail" />
-        <br><br/>
-        <input type="text" placeholder="Password" v-model="register.UserPassword" />
-        <br><br/>
-        <input type="text" placeholder="Confirm password" v-model="register.UserConfirmPassword" />
-        <br><br/>
-        <button class="btn btn-success" @click="registerSubmit">Register</button>
-        <p>If you have account ?<strong @click="loginClick"><a>login here!</a></strong></p>
-    </div>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title">Register Here</h5>
+                <form class="form-group">
+                  <input class="form-control my-2" type="text" v-model="register.UserName" placeholder="Name" />
+                  <input class="form-control my-2" type="text" v-model="register.UserEmail" placeholder="Email" />
+                  <input class="form-control my-2" placeholder="Password" v-model="register.UserPassword" />
+                  <input class="form-control my-2" type="text" placeholder="Confirm password" v-model="register.UserConfirmPassword" />
+                  <button class="btn btn-success" @click="registerSubmit">Register</button>
+                  <p class="text-center">Don't have an account? <strong @click="registerClick"><router-link to="/login">Loggin here </router-link></strong></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </template>
 <script>
 import axios from 'axios';

@@ -1,11 +1,5 @@
 <template>
-  <nav>
-    <router-link to="/home" class="m-3">Home </router-link>
-    <router-link to="/about" class="m-3">About</router-link>
-  </nav>
-  <router-view/>
   <div class="home">
-    <h1>All Users</h1>
      <table class="table table-bordered table-responsive">
       <thead>
         <tr>
@@ -56,6 +50,26 @@ export default {
         this.error = "Failed to fetch data";
         console.error(err); // Log the error for debugging
       }
+      // this.Data = [
+      //   {
+      //     userId : 1,
+      //     categoryId : 1,
+      //     categoryDescription : "Job",
+      //     name : "Infosys",
+      //     dailyRemainder : true,
+      //     description : "need to apply for sde role",
+      //     mailId : "infosys@gmail.com"
+      //   },
+      //   {
+      //     userId : 1,
+      //     categoryId : 2,
+      //     categoryDescription : "daily",
+      //     name : "call to mom",
+      //     dailyRemainder : false,
+      //     description : "about bank loans",
+      //     mailId : "nothing",
+      //   }
+      // ]
 
     }
   }
